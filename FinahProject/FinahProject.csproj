@@ -108,9 +108,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\EnquiryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\AnswerSet.cs" />
+    <Compile Include="Models\Detail.cs" />
+    <Compile Include="Models\Enquiry.cs" />
+    <Compile Include="Models\ExtraPerson.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\TextBox.cs" />
+    <Compile Include="Models\Theme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,8 +139,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
