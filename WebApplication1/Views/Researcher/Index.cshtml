@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+@using Resources
+<div class="row">
+    <div class="col-md-4">
+        <select id="SelectEnquiry">
+            <option>@Text.ChooseAnOption</option>
+
+        </select>
+
+    </div>
+    @Html.ActionLink(@Text.Overview, "Overview", "Enquiry", null, new { @class = "btn btn-primary btn-large col-md-8" })
+    
+</div>
+
+<div class="row"><input id="ButtonRequest" class="col-md-8 col-md-offset-4" type="button" value="@Text.Request" /></div>
+@if (ViewContext.HttpContext.User.IsInRole("Researcher"))
+{
+    <div class="row"><input id="ButtonAdapt" class="col-md-8 col-md-offset-4" type="button" value="@Text.Adapt" /></div>
+    <div class="row"><input id="ButtonCreate" class="col-md-8 col-md-offset-4" type="button" value="@Text.Create" /></div>
+    <div class="row"><input id="ButtonPrint" class="col-md-8 col-md-offset-4" type="button" value="@Text.Print" /></div>
+    <div class="row"><input id="ButtonDelete" class="col-md-8 col-md-offset-4" type="button" value="@Text.Delete" /></div>
+
+}
