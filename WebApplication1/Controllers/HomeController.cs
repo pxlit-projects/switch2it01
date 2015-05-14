@@ -10,7 +10,10 @@ namespace FinahProject.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole("Researcher"))
+                return Redirect("Researcher/Index");
+            else
+                return View();
         }
 
         public ActionResult About()

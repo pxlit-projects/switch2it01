@@ -21,14 +21,6 @@ namespace FinahProject.Models
             get { return detailListValue; }
             set { detailListValue = value; }
         }
-        
-
-        public String Description
-        {
-            get { return descriptionValue; }
-            set { descriptionValue = value; }
-        }
-        
 
         public String Name
         {
@@ -37,6 +29,14 @@ namespace FinahProject.Models
         }
         
 
+
+
+        public String Description
+        {
+            get { return descriptionValue; }
+            set { descriptionValue = value; }
+        }
+        
         public List<AnswerSet> AnswerSetList
         {
             get { return answerSetListValue; }

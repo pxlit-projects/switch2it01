@@ -11,16 +11,21 @@
         </select>
 
     </div>
-    @Html.ActionLink(@Text.Overview, "Overview", "Enquiry", null, new { @class = "btn btn-primary btn-large col-md-8" })
+    @Html.ActionLink(@Text.Overview, "Overview", "Enquiry", null, new { @class = "btn btn-primary btn-large col-md-4" })
     
 </div>
 
-<div class="row"><input id="ButtonRequest" class="col-md-8 col-md-offset-4" type="button" value="@Text.Request" /></div>
+<div class="row">@Html.ActionLink(@Text.Request, "Overview", "Enquiry", null, new { @class = "btn btn-primary btn-large col-md-4 col-md-offset-4" })
+</div>
 @if (ViewContext.HttpContext.User.IsInRole("Researcher"))
 {
-    <div class="row"><input id="ButtonAdapt" class="col-md-8 col-md-offset-4" type="button" value="@Text.Adapt" /></div>
-    <div class="row"><input id="ButtonCreate" class="col-md-8 col-md-offset-4" type="button" value="@Text.Create" /></div>
-    <div class="row"><input id="ButtonPrint" class="col-md-8 col-md-offset-4" type="button" value="@Text.Print" /></div>
-    <div class="row"><input id="ButtonDelete" class="col-md-8 col-md-offset-4" type="button" value="@Text.Delete" /></div>
+    <div class="row ">@Html.ActionLink(@Text.Adapt, "Edit", "Enquiry", null, new { @class = "btn btn-primary btn-large col-md-4 col-md-offset-4" })
+</div>
+    <div class="row">@Html.ActionLink(@Text.Create, "Create", "Enquiry", null, new { @class = "btn btn-primary btn-large col-md-4 col-md-offset-4" })
+</div>
+    <div class="row">@Html.ActionLink(@Text.Print, "Overview", "Enquiry", null, new { @class = "btn btn-primary btn-large col-md-4 col-md-offset-4" })
+</div>
+    <div class="row">@Html.ActionLink(@Text.Delete, "Overview", "Enquiry", null, new { @class = "btn btn-primary btn-large col-md-4 col-md-offset-4" })
+</div>
 
 }

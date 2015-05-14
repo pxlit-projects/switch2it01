@@ -129,11 +129,14 @@
   <data name="Delete" xml:space="preserve">
     <value>Verwijderen</value>
   </data>
+  <data name="ExtraPeople" xml:space="preserve">
+    <value>Extra personen betrokken bij deze vragenlijst (bv. mantelzorger)</value>
+  </data>
   <data name="Finah" xml:space="preserve">
     <value>Finah</value>
   </data>
-  <data name="LogOnAsClient" xml:space="preserve">
-    <value>Als cliënt inloggen</value>
+  <data name="LogOn" xml:space="preserve">
+    <value>Inloggen als cliënt</value>
   </data>
   <data name="LogOnAsResearcher" xml:space="preserve">
     <value>Als onderzoeker inloggen</value>

@@ -97,6 +97,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Extra personen betrokken bij deze vragenlijst (bv. mantelzorger).
+        /// </summary>
+        internal static string ExtraPeople {
+            get {
+                return ResourceManager.GetString("ExtraPeople", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finah.
         /// </summary>
         internal static string Finah {
@@ -106,11 +115,11 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Als cliënt inloggen.
+        ///   Looks up a localized string similar to Inloggen als cliënt.
         /// </summary>
-        internal static string LogOnAsClient {
+        internal static string LogOn {
             get {
-                return ResourceManager.GetString("LogOnAsClient", resourceCulture);
+                return ResourceManager.GetString("LogOn", resourceCulture);
             }
         }
         
