@@ -135,6 +135,9 @@
   <data name="ExtraPeople" xml:space="preserve">
     <value>Extra personen betrokken bij deze vragenlijst (bv. mantelzorger)</value>
   </data>
+  <data name="ExtraPerson" xml:space="preserve">
+    <value>Extra persoon</value>
+  </data>
   <data name="Finah" xml:space="preserve">
     <value>Finah</value>
   </data>
