@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FinahProject.Models;
 
 namespace FinahProject.Controllers
 {
@@ -29,6 +30,8 @@ namespace FinahProject.Controllers
 
         public ActionResult Create()
         {
+            
+
             return View();
         }
 
@@ -101,5 +104,12 @@ namespace FinahProject.Controllers
                 return View();
             }
         }
+
+        public ActionResult titleForm()
+        {
+            EnquiryTitelForm form = new EnquiryTitelForm();
+            return View(form);
+        }
+
     }
 }

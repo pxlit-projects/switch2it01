@@ -1,0 +1,19 @@
+﻿@model FinahProject.Models.EnquiryTitelForm
+
+@using Resources
+
+@{
+    ViewBag.Title = "EnquiryForm";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(m => m.titleEnquiry)
+    @Html.TextBoxFor(m => m.titleEnquiry)
+    @Html.LabelFor(m => m.DescriptionEnquiry)
+    @Html.TextBoxFor(m => m.DescriptionEnquiry)
+    @Html.ListBoxFor(m => m.extraPersonList, Model.extraPerson)
+    @Html.LabelFor(m => m.extraPersonName)
+    @Html.TextBoxFor(m => m.extraPersonName)
+    <input type="submit" value="submit" />
+}
