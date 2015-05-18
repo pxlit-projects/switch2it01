@@ -187,6 +187,14 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-FinahProject-20150512111703.mdf" />
+    <Content Include="App_Data\aspnet-FinahProject-20150512111703_log.ldf">
+      <DependentUpon>aspnet-FinahProject-20150512111703.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\ASPNETDB.MDF" />
+    <Content Include="App_Data\aspnetdb_log.ldf">
+      <DependentUpon>ASPNETDB.MDF</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -242,7 +250,6 @@
     <Content Include="Views\ExtraPerson\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
