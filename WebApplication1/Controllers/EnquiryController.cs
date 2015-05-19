@@ -30,7 +30,7 @@ namespace FinahProject.Controllers
 
         public ActionResult Create()
         {
-            
+
 
             return View();
         }
@@ -108,6 +108,17 @@ namespace FinahProject.Controllers
         public ActionResult titleForm()
         {
             EnquiryTitelForm form = new EnquiryTitelForm();
+            //form.ListItems = new List<SelectListItem>();
+            //form.ListItems.Add(new SelectListItem
+            //{
+            //    Text = "Patiënt",
+            //    Value = "Patiënt"
+            //});
+            //form.ListItems.Add(new SelectListItem
+            //{
+            //    Text = "Mantelzorger",
+            //    Value = "Mantelzorger"
+            //});
             return View(form);
         }
 
