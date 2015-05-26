@@ -108,6 +108,8 @@ namespace FinahProject.Controllers
         public ActionResult titleForm()
         {
             EnquiryTitelForm form = new EnquiryTitelForm();
+            form.list = new List<SelectListItem>();
+            form.list.add()
             return View(form);
         }
 
