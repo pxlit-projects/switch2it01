@@ -1,5 +1,6 @@
 ﻿@model FinahProject.Models.EnquiryTitelForm
 
+
 @using Resources
 
 @{
@@ -11,25 +12,48 @@
 {
     <div class="form-horizontal">
         <div class="form-group">
-            @Html.LabelFor(m => m.titleEnquiry, new { @class = "col-md-3 control-label"})
-            @Html.TextBoxFor(m => m.titleEnquiry, new { @class = "col-md-9 form-control", placeholder = "Titel"})
+            @Html.LabelFor(m => m.titleEnquiry, new { @class = "col-md-3 control-label" })
+            @Html.TextBoxFor(m => m.titleEnquiry, new { @class = "col-md-9 form-control", placeholder = "Titel" })
         </div>
 
         <div class="form-group">
             @Html.LabelFor(m => m.DescriptionEnquiry, new { @class = "col-md-3 control-label" })
             @Html.TextBoxFor(m => m.DescriptionEnquiry, new { @class = "col-md-9 form-control", placeholder = "Omschrijving" })
         </div>
-
-        <div class="form-group">
+        <div>
+            @Html.CheckBox("checkbox", new { id = "myCheckbox" })
+            @Html.Label("Extra personen toevoegen of verwijderen")
+        </div>
+        <div class="form-group" id="ShowHideMe" style="display: none;" >
             @Html.LabelFor(m => m.extraPersonName, new { @class = "col-md-3 control-label" })
             @Html.TextBoxFor(m => m.extraPersonName, new { @class = "col-md-9 form-control", placeholder = "Extra persoon" })
-            
+
             @Html.ListBoxFor(model => model.extraPerson, Model.ListItems, new { @class = "col-md-offset-6 form-control" })
-            <input type="submit" value="Persoon toevoegen" class="col-md-offset-6 form-control btn btn-primary btn-large" />
-            <input type="submit" value="Persoon verwijderen" class="col-md-offset-6 form-control btn btn-primary btn-large" />     
+            <input type="submit" value="Persoon toevoegen" class="col-md-offset-6 form-control btn btn-primary btn-large" formaction="" />
+            <input type="submit" value="Persoon verwijderen" class="col-md-offset-6 form-control btn btn-primary btn-large" />
         </div>
 
 
         <input type="submit" value="submit" />
     </div>
+}
+@section scripts
+{
+    <script type="text/javascript">
+        $('#myCheckbox').change(
+
+        function (e) {
+            // code here to hide your text
+
+            var checked = $(this).prop('checked');
+            if (checked) {
+                $('#ShowHideMe').show();
+            }
+
+            else {
+                $('#ShowHideMe').hide();
+            }
+        }
+   );
+    </script>
 }
