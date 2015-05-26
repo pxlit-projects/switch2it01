@@ -5,6 +5,7 @@
 @{
     ViewBag.Title = "EnquiryForm";
 }
+@ViewBag.listItems;
 
 @using (Html.BeginForm())
 {
@@ -16,5 +17,11 @@
     
     @Html.LabelFor(m => m.extraPersonName)
     @Html.TextBoxFor(m => m.extraPersonName)
+
+   
+    
+    
+    
+    @Html.ListBoxFor(model => model.extraPerson, Model.ListItems)
     <input type="submit" value="submit" />
 }
