@@ -5,23 +5,31 @@
 @{
     ViewBag.Title = "EnquiryForm";
 }
-@ViewBag.listItems;
+@ViewBag.listItems
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(m => m.titleEnquiry)
-    @Html.TextBoxFor(m => m.titleEnquiry)
-    @Html.LabelFor(m => m.DescriptionEnquiry)
-    
-    @Html.TextBoxFor(m => m.DescriptionEnquiry)
-    
-    @Html.LabelFor(m => m.extraPersonName)
-    @Html.TextBoxFor(m => m.extraPersonName)
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(m => m.titleEnquiry, new { @class = "col-md-3 control-label"})
+            @Html.TextBoxFor(m => m.titleEnquiry, new { @class = "col-md-9 form-control", placeholder = "Titel"})
+        </div>
 
-   
-    
-    
-    
-    @Html.ListBoxFor(model => model.extraPerson, Model.ListItems)
-    <input type="submit" value="submit" />
+        <div class="form-group">
+            @Html.LabelFor(m => m.DescriptionEnquiry, new { @class = "col-md-3 control-label" })
+            @Html.TextBoxFor(m => m.DescriptionEnquiry, new { @class = "col-md-9 form-control", placeholder = "Omschrijving" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.extraPersonName, new { @class = "col-md-3 control-label" })
+            @Html.TextBoxFor(m => m.extraPersonName, new { @class = "col-md-9 form-control", placeholder = "Extra persoon" })
+            
+            @Html.ListBoxFor(model => model.extraPerson, Model.ListItems, new { @class = "col-md-offset-6 form-control" })
+            <input type="submit" value="Persoon toevoegen" class="col-md-offset-6 form-control btn btn-primary btn-large" />
+            <input type="submit" value="Persoon verwijderen" class="col-md-offset-6 form-control btn btn-primary btn-large" />     
+        </div>
+
+
+        <input type="submit" value="submit" />
+    </div>
 }
