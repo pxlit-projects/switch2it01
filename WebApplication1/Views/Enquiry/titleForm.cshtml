@@ -29,7 +29,7 @@
             @Html.TextBoxFor(m => m.extraPersonName, new { @class = "col-md-9 form-control", placeholder = "Extra persoon" })
 
             @Html.ListBoxFor(model => model.extraPerson, Model.ListItems, new { @class = "col-md-offset-6 form-control" })
-            <input type="submit" value="Persoon toevoegen" class="col-md-offset-6 form-control btn btn-primary btn-large" formaction="" />
+            <input type="submit" value="Persoon toevoegen" class="col-md-offset-6 form-control btn btn-primary btn-large" formaction="AddPerson" />
             <input type="submit" value="Persoon verwijderen" class="col-md-offset-6 form-control btn btn-primary btn-large" />
         </div>
 

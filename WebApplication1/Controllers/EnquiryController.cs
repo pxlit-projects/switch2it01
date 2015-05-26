@@ -9,12 +9,11 @@ namespace FinahProject.Controllers
 {
     public class EnquiryController : Controller
     {
-        //
         // GET: /Enquiry/
 
         public ActionResult Index()
         {
-            return View();
+             return View();
         }
 
         //
@@ -30,7 +29,7 @@ namespace FinahProject.Controllers
 
         public ActionResult Create()
         {
-            
+
 
             return View();
         }
@@ -108,20 +107,32 @@ namespace FinahProject.Controllers
         public ActionResult titleForm()
         {
             EnquiryTitelForm form = new EnquiryTitelForm();
-
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             return View(form);
         }
 
+        [HttpPost]
+        public ActionResult AddPerson(EnquiryTitelForm form)
+        {
+            try
+            {
+                form.extraPersonList.Add(new ExtraPerson { Name = form.extraPersonName });
+                foreach (var item in form.extraPersonList)
+                {
+                    form.ListItems.Add(new SelectListItem
+                    {
+                        Text = item.Name,
+                        Value = item.Name
+
+                    });
+
+                }
+
+                return View("titleForm", form);
+            }
+            catch
+            {
+                return View(form);
+            }
+        }
     }
 }

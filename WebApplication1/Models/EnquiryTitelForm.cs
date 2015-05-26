@@ -28,17 +28,21 @@ namespace FinahProject.Models
 
         public EnquiryTitelForm()
         {
+            
+            extraPersonList = new List<ExtraPerson>();
+            extraPersonList.Add(new ExtraPerson { Name = "Patiënt" });
+            extraPersonList.Add(new ExtraPerson { Name = "Mantelzorger" });
+
             ListItems = new List<SelectListItem>();
-            ListItems.Add(new SelectListItem
+            foreach (var item in extraPersonList)
             {
-                Text = "Patiënt",
-                Value = "Patiënt"
+                ListItems.Add(new SelectListItem {
+                Text = item.Name,
+                Value = item.Name
             });
-            ListItems.Add(new SelectListItem
-            {
-                Text = "Mantelzorger",
-                Value = "Mantelzorger"
-            });
+            }
+            
+
         }
 
 
