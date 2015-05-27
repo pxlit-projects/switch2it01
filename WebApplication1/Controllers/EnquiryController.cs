@@ -162,7 +162,10 @@ namespace FinahProject.Controllers
                 {
                     splittedPersons = selectedItems.Split(',');
                 }
-                //List<SelectListItem> removePersonsList = new List<SelectListItem>();
+                else
+                {
+                    splittedPersons = new String[] { selectedItems};
+                }
                 model.ListItems = (List<SelectListItem>)TempData["extraPersonList"];
                 List<SelectListItem> tempList = new List<SelectListItem>();
                 foreach (var item in model.ListItems)
@@ -180,11 +183,6 @@ namespace FinahProject.Controllers
                     }
                     
                 }
-                        
-               
-            
-               // model.ListItems.RemoveAll(x => removePersonsList.Contains(x));
-                
                 this.TempData["extraPersonList"] = model.ListItems;
                 return View("titleForm", model);
             }
