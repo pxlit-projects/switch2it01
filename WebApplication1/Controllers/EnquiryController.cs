@@ -13,7 +13,7 @@ namespace FinahProject.Controllers
 
         public ActionResult Index()
         {
-             return View();
+            return View();
         }
 
         //
@@ -106,7 +106,21 @@ namespace FinahProject.Controllers
 
         public ActionResult titleForm()
         {
+
+
             EnquiryTitelForm form = new EnquiryTitelForm();
+            form.ListItems = new List<SelectListItem>();
+            foreach (var item in form.extraPersonList)
+            {
+                form.ListItems.Add(new SelectListItem
+                {
+                    Text = item.Name,
+                    Value = item.Name
+
+                });
+
+            }
+            this.TempData["extraPersonList"] = form.ListItems;
             return View(form);
         }
 
@@ -115,22 +129,68 @@ namespace FinahProject.Controllers
         {
             try
             {
-                form.extraPersonList.Add(new ExtraPerson { Name = form.extraPersonName });
-                foreach (var item in form.extraPersonList)
-                {
-                    form.ListItems.Add(new SelectListItem
-                    {
-                        Text = item.Name,
-                        Value = item.Name
+                form.ListItems = (List<SelectListItem>)TempData["extraPersonList"];
+                form.ListItems.Add(new SelectListItem { Text = form.extraPersonName , Value = form.extraPersonName});
+                //foreach (var item in form.extraPersonList)
+                //{
+                //    form.ListItems.Add(new SelectListItem
+                //    {
+                //        Text = item.Name,
+                //        Value = item.Name
 
-                    });
+                //    });
 
-                }
-
+                //}
+                this.TempData["extraPersonList"] = form.ListItems;
                 return View("titleForm", form);
             }
             catch
             {
+                return View(form);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult RemovePerson(FormCollection form, EnquiryTitelForm model)
+        {
+            try
+
+            {
+                String[] splittedPersons = null;
+                var selectedItems = form["extraPerson"];
+                if (selectedItems.Contains(','))
+                {
+                    splittedPersons = selectedItems.Split(',');
+                }
+                //List<SelectListItem> removePersonsList = new List<SelectListItem>();
+                model.ListItems = (List<SelectListItem>)TempData["extraPersonList"];
+                List<SelectListItem> tempList = new List<SelectListItem>();
+                foreach (var item in model.ListItems)
+                {
+                    tempList.Add(item);
+                }
+                foreach (var item in tempList)
+                {
+                    foreach (var split in splittedPersons)
+                    {
+                        if (item.Text == split)
+                        {
+                            model.ListItems.Remove(item);
+                        }
+                    }
+                    
+                }
+                        
+               
+            
+               // model.ListItems.RemoveAll(x => removePersonsList.Contains(x));
+                
+                this.TempData["extraPersonList"] = model.ListItems;
+                return View("titleForm", model);
+            }
+            catch (Exception)
+            {
+
                 return View(form);
             }
         }

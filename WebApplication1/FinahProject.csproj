@@ -251,12 +251,10 @@
     <Content Include="Views\Researcher\Index.cshtml" />
     <Content Include="Views\Enquiry\Create.cshtml" />
     <Content Include="Views\ExtraPerson\Create.cshtml" />
-    <Content Include="Views\Enquiry\EnquiryTitelForm.cshtml" />
     <Content Include="Views\Enquiry\titleForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\MAGWEG\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

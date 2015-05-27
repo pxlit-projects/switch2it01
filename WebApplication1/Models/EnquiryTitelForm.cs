@@ -33,14 +33,14 @@ namespace FinahProject.Models
             extraPersonList.Add(new ExtraPerson { Name = "Patiënt" });
             extraPersonList.Add(new ExtraPerson { Name = "Mantelzorger" });
 
-            ListItems = new List<SelectListItem>();
-            foreach (var item in extraPersonList)
-            {
-                ListItems.Add(new SelectListItem {
-                Text = item.Name,
-                Value = item.Name
-            });
-            }
+            //ListItems = new List<SelectListItem>();
+            //foreach (var item in extraPersonList)
+            //{
+            //    ListItems.Add(new SelectListItem {
+            //    Text = item.Name,
+            //    Value = item.Name
+            //});
+            //}
             
 
         }
